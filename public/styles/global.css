@@ -703,6 +703,11 @@ h4 {
     transform: translate(-50%, -50%);
     width: 8px;
     padding: 0;
+    background-image: linear-gradient(
+      white 60%,
+      var(--color-primary),
+      transparent
+    );
   }
   75% {
     height: 200px;
@@ -713,16 +718,16 @@ h4 {
     transform: translate(-50%, -120vh);
     width: 8px;
     padding: 0;
+    background-image: linear-gradient(
+      white 60%,
+      var(--color-primary),
+      transparent
+    );
   }
 }
 
 #modal--take-off {
   transition: width 0.25s;
-  background-image: linear-gradient(
-    white 60%,
-    var(--color-primary),
-    transparent
-  );
   transform: translate(-50%, -120vh);
   animation: take-off 1.25s forwards ease-in;
 }

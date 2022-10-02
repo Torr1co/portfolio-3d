@@ -1,8 +1,3 @@
-import "../styles/canvas.css";
-import "../styles/queries.css";
-import "../styles/global.css";
-// import
-
 function dqs<T = Element>(selector: string) {
   return document.querySelector(selector) as T;
 }
@@ -198,7 +193,9 @@ const loadImg: IntersectionObserverCallback = function (entries, observer) {
   if (!entry.isIntersecting) return;
   const loadingImg = entry.target as HTMLImageElement;
   // Replace src with data-src
-  loadingImg.src = loadingImg.dataset.src as string;
+  const imgUrl = new URL(loadingImg.dataset.src as string, import.meta.url)
+    .href;
+  loadingImg.src = imgUrl;
 
   loadingImg.addEventListener("load", function () {
     loadingImg.classList.remove("lazy-img");
@@ -230,7 +227,9 @@ declare namespace Email {
       };
 
   interface EmailData {
-    SecureToken: string;
+    Host: string;
+    Password: string;
+    Username: string;
     To: string;
     From: string;
     Subject: string;
@@ -250,9 +249,11 @@ const submitForm = function (e: SubmitEvent) {
   let message = dqs<HTMLInputElement>(".message").value;
 
   Email.send({
-    SecureToken: "59cd9116-97f6-4e58-838e-3e5e3b1ead00",
+    Host: "smtp.elasticemail.com",
+    Username: "torricofabrizio27@gmail.com",
     To: "torricofabrizio27@gmail.com",
     From: "torricofabrizio27@gmail.com",
+    Password: "58786E9B8910DE3F023EA4AE2D1E53425083",
     Subject: `${name} contesto tu portfolio, ${subject}`,
     Body: `Name: ${name} <br/> Email: ${email} <br/> Message:  ${message}`,
   }).then((message: string) => {

@@ -1,6 +1,6 @@
 import * as THREE from "three";
-import star1 from "./img/shapes/star1.png";
-import star2 from "./img/shapes/star2.png";
+import star1 from "/img/star1.png";
+import star2 from "/img/star2.png";
 
 const getRandomParticelPos = (particleCount: number) => {
   const arr = new Float32Array(particleCount * 3);
