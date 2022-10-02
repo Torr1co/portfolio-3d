@@ -185,7 +185,7 @@ allSections.forEach(function (section) {
 });
 
 // Lazy loading images
-/* const imgTargets = document.querySelectorAll("img[data-src]");
+const imgTargets = document.querySelectorAll("img[data-src]");
 
 const loadImg: IntersectionObserverCallback = function (entries, observer) {
   const [entry] = entries;
@@ -193,16 +193,10 @@ const loadImg: IntersectionObserverCallback = function (entries, observer) {
   if (!entry.isIntersecting) return;
   const loadingImg = entry.target as HTMLImageElement;
   // Replace src with data-src
-  const imgUrl = new URL(
-    (".." + loadingImg.dataset.src) as string,
-    import.meta.url
-  ).href;
-  console.log(imgUrl, loadingImg.dataset.src);
-  loadingImg.src = imgUrl;
-
-  loadingImg.addEventListener("load", function () {
-    loadingImg.classList.remove("lazy-img");
-  });
+  (loadingImg.src = loadingImg.dataset.src as string),
+    loadingImg.addEventListener("load", function () {
+      loadingImg.classList.remove("lazy-img");
+    });
 
   observer.unobserve(loadingImg);
 };
@@ -210,10 +204,10 @@ const loadImg: IntersectionObserverCallback = function (entries, observer) {
 const imgObserver = new IntersectionObserver(loadImg, {
   root: null,
   threshold: 0,
-  rootMargin: "400px",
+  rootMargin: "200px",
 });
 
-imgTargets.forEach((img) => imgObserver.observe(img)); */
+imgTargets.forEach((img) => imgObserver.observe(img));
 
 ///////////////////////////////////////
 // Contact Info
