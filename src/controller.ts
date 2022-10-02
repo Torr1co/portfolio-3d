@@ -227,7 +227,7 @@ declare namespace Email {
 
   interface EmailData {
     SecureToken: string;
-    To: string | string[];
+    To: string;
     From: string;
     Subject: string;
     Body: string;
@@ -237,23 +237,6 @@ declare namespace Email {
   function send(email: EmailData): Promise<string>;
 }
 
-const sendEmail = function (
-  name: string,
-  email: string,
-  subject: string,
-  message: string
-) {
-  Email.send({
-    SecureToken: "59cd9116-97f6-4e58-838e-3e5e3b1ead00",
-    To: "torricofabrizio27@gmail.com",
-    From: "torricofabrizio27@gmail.com",
-    Subject: `${name} contesto tu portfolio, ${subject}`,
-    Body: `Name: ${name} <br/> Email: ${email} <br/> Message:  ${message}`,
-  }).then((message: string) => {
-    message == "OK" ? alert("message sent succesfully") : alert(message);
-  });
-};
-
 const submitForm = function (e: SubmitEvent) {
   e.preventDefault();
 
@@ -262,8 +245,25 @@ const submitForm = function (e: SubmitEvent) {
   let subject = dqs<HTMLInputElement>(".subject").value;
   let message = dqs<HTMLInputElement>(".message").value;
 
-  modalForm.reset();
-  sendEmail(name, email, subject, message);
+  Email.send({
+    SecureToken: "59cd9116-97f6-4e58-838e-3e5e3b1ead00",
+    To: "torricofabrizio27@gmail.com",
+    From: "torricofabrizio27@gmail.com",
+    Subject: `${name} contesto tu portfolio, ${subject}`,
+    Body: `Name: ${name} <br/> Email: ${email} <br/> Message:  ${message}`,
+  }).then((message: string) => {
+    if (message !== "OK") {
+      alert(message);
+      return;
+    }
+    modalForm.reset();
+    modal.setAttribute("id", "modal--take-off");
+    setTimeout(() => {
+      closeModal();
+      alert("Message sent succesfully");
+      modal.removeAttribute("id");
+    }, 1500);
+  });
 };
 
 modalForm.addEventListener("submit", submitForm);

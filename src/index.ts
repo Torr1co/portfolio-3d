@@ -68,7 +68,6 @@ function onMouseMove(event: MouseEvent) {
 }
 
 function onScroll() {
-  console.log(camera.position.z);
   const { top } = document.body.getBoundingClientRect();
   camera.position.z = CAMERA_Z + top * 0.01;
   camera.position.y = CAMERA_Y + top * -0.0002;

@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
       rel="stylesheet"
     />
-    <script defer src="src/controller.ts"></script>
+    <script defer src="src/controller.ts" type="module"></script>
 
     <!-- META TAGS -->
     <meta charset="UTF-8" />
@@ -396,27 +396,41 @@
       </footer>
 
       <div class="modal hidden">
-        <button class="btn--close-modal">&times;</button>
-        <h2 class="modal__header">Let's Talk! <br /></h2>
-        <p>
-          We will get back to you within one to two days through email. Also
-          please don't forget to check your spam account just in case!
-        </p>
-        <form method="POST" class="modal__form">
-          <label>First Name</label>
-          <input class="name" type="text" required />
-          <label>Email Address</label>
-          <input class="email" type="email" required />
-          <label>Subject</label>
-          <input class="subject" type="text" required />
-          <textarea
-            required
-            id="message"
-            class="message"
-            placeholder="Message"
-          ></textarea>
-          <input type="submit" class="btn" value="Send Request &rarr;" />
-        </form>
+        <div class="take-off-container">
+          <button class="btn--close-modal">&times;</button>
+          <h2 class="modal__header">Let's Talk! <br /></h2>
+          <p>
+            We will get back to you within one to two days through email. Also
+            please don't forget to check your spam account just in case!
+          </p>
+          <form method="POST" class="modal__form">
+            <label for="name">First Name</label>
+            <input id="name" class="name" type="text" required minlength="3" />
+            <label for="email">Email Address</label>
+            <input
+              id="email"
+              class="email"
+              type="email"
+              required
+              minlength="3"
+            />
+            <label for="subject">Subject</label>
+            <input
+              id="subject"
+              class="subject"
+              type="text"
+              required
+              minlength="3"
+            />
+            <textarea
+              required
+              id="message"
+              class="message"
+              placeholder="Message"
+            ></textarea>
+            <input type="submit" class="btn" value="Send Request &rarr;" />
+          </form>
+        </div>
       </div>
       <div class="overlay hidden"></div>
     </main>
