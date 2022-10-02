@@ -14,6 +14,12 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   4500
 );
+const CAMERA_Z = 40;
+const CAMERA_X = -13;
+const CAMERA_Y = 0;
+camera.position.setZ(CAMERA_Z);
+camera.position.setX(CAMERA_X);
+camera.position.setY(CAMERA_Y);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg") as HTMLCanvasElement,
@@ -28,7 +34,6 @@ scene.add(pointLight, ambientLight);
 scene.background = new THREE.Color("#1a0f31");
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
 
 // const lightHelper = new THREE.PointLightHelper(PointLight);
 // scene.add(lightHelper);
@@ -43,6 +48,14 @@ const stars = new Stars();
 scene.add(stars.getStars1);
 scene.add(stars.getStars2);
 
+/* const geometry = new THREE.SphereGeometry(15, 30, 15);
+const material = new THREE.MeshBasicMaterial({
+  color: 0xfa2862,
+  wireframe: true,
+});
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere); */
+
 // const rocket = await Rocket.createRocket();
 // scene.add(rocket.getRocket());
 
@@ -55,11 +68,11 @@ function onMouseMove(event: MouseEvent) {
 }
 
 function onScroll() {
+  console.log(camera.position.z);
   const { top } = document.body.getBoundingClientRect();
-  console.log(top);
-  camera.position.z = top * -0.01;
-  camera.position.y = top * -0.0002;
-  camera.position.x = top * -0.0002;
+  camera.position.z = CAMERA_Z + top * 0.01;
+  camera.position.y = CAMERA_Y + top * -0.0002;
+  camera.position.x = CAMERA_X + top * -0.0002;
 }
 //------------------------- LOOP ----------------------//
 function animate() {

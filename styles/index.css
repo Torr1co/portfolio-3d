@@ -176,6 +176,7 @@ img {
 
 .nav__link--btn:link,
 .nav__link--btn:visited {
+  font-weight: 500;
   padding: 0.8rem 2.5rem;
   border-radius: 3rem;
   background-color: var(--color-primary);
@@ -221,7 +222,7 @@ img {
   justify-self: end;
 }
 .rocket {
-  background-image: url("../img/shuttle.svg");
+  background-image: url("../img/rocket.svg");
   /* transform: rotate(-45deg) translateY(0); */
   background-size: 70px;
   height: 70px;
@@ -624,7 +625,7 @@ h4 {
 /* FOOTER */
 .footer {
   padding: 10rem 3rem;
-  background-color: transparent;
+  background: rgb(0, 0, 0, 0.7);
 }
 
 .footer__nav {
@@ -636,6 +637,9 @@ h4 {
 
 .footer__item {
   margin-right: 4rem;
+}
+.footer__item:hover {
+  border-bottom: 1px solid #fff;
 }
 
 .footer__link {
@@ -652,14 +656,14 @@ h4 {
 }
 
 .footer__copyright {
-  font-size: 1.4rem;
-  color: #aaa;
+  font-size: 1.6rem;
+  color: rgb(180, 180, 180);
   text-align: center;
 }
 
-.footer__copyright .footer__link {
+/* .footer__copyright .footer__link {
   font-size: 1.4rem;
-}
+} */
 
 /* MODAL WINDOW */
 .modal {

@@ -22,7 +22,6 @@ modalForm.reset();
 
 const openModal = function (e: Event) {
   e.preventDefault();
-  console.log(modal);
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
@@ -32,9 +31,7 @@ const closeModal = function () {
   overlay.classList.add("hidden");
 };
 
-console.log("here");
 btnsOpenModal.forEach((btn) => {
-  console.log(btn);
   btn.addEventListener("click", openModal);
 });
 
@@ -209,13 +206,36 @@ const loadImg: IntersectionObserverCallback = function (entries, observer) {
 const imgObserver = new IntersectionObserver(loadImg, {
   root: null,
   threshold: 0,
-  rootMargin: "200px",
+  rootMargin: "400px",
 });
 
 imgTargets.forEach((img) => imgObserver.observe(img));
 
 ///////////////////////////////////////
 // Contact Info
+
+declare namespace Email {
+  type Attachment =
+    | {
+        name: string;
+        path: string;
+      }
+    | {
+        name: string;
+        data: string; // base64 format
+      };
+
+  interface EmailData {
+    SecureToken: string;
+    To: string | string[];
+    From: string;
+    Subject: string;
+    Body: string;
+    Attachments?: Attachment[];
+  }
+
+  function send(email: EmailData): Promise<string>;
+}
 
 const sendEmail = function (
   name: string,
