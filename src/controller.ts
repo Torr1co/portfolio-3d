@@ -185,7 +185,7 @@ allSections.forEach(function (section) {
 });
 
 // Lazy loading images
-const imgTargets = document.querySelectorAll("img[data-src]");
+/* const imgTargets = document.querySelectorAll("img[data-src]");
 
 const loadImg: IntersectionObserverCallback = function (entries, observer) {
   const [entry] = entries;
@@ -213,7 +213,7 @@ const imgObserver = new IntersectionObserver(loadImg, {
   rootMargin: "400px",
 });
 
-imgTargets.forEach((img) => imgObserver.observe(img));
+imgTargets.forEach((img) => imgObserver.observe(img)); */
 
 ///////////////////////////////////////
 // Contact Info
