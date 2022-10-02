@@ -1,4 +1,6 @@
 import * as THREE from "three";
+import star1 from "./img/shapes/star1.png";
+import star2 from "./img/shapes/star2.png";
 
 const getRandomParticelPos = (particleCount: number) => {
   const arr = new Float32Array(particleCount * 3);
@@ -30,17 +32,13 @@ export default class Stars {
     const materials = [
       new THREE.PointsMaterial({
         size: 0.5,
-        map: loader.load(
-          "https://raw.githubusercontent.com/Kuntal-Das/textures/main/sp1.png"
-        ),
+        map: loader.load(star1),
         transparent: true,
         // color: "#ff0000"
       }),
       new THREE.PointsMaterial({
         size: 0.5,
-        map: loader.load(
-          "https://raw.githubusercontent.com/Kuntal-Das/textures/main/sp2.png"
-        ),
+        map: loader.load(star2),
         transparent: true,
         // color: "#0000ff"
       }),
