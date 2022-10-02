@@ -1,13 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Fabrizio Torrico | Front End Developer</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/canvas.css" />
+    <link rel="stylesheet" href="styles/queries.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="src/controller.ts"></script>
+
+    <!-- META TAGS -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:url" content="https://fabriziotorrico.me/" />
+    <meta property="og:title" content="Fabrizio Torrico | Web Developer" />
+    <meta
+      property="og:image"
+      content="https://www.fabriziotorrico.me/img/fabrizioTorrico.png"
+    />
+    <meta
+      property="og:description"
+      content="Hello! I'm Fabrizio Torrico, a web developer with digital marketing experience and I am a specialist in javascript, React, Nextjs, HTML, CSS and Figma. 
+      Are you looking for a communicative and proactive front-end developer who works well in a team and above all has a big passion for computer science? Let me know! I am also in tune with the latest technologies since I love to continue incorporating knowledge and putting it into practice."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      name="description"
+      content="Fabrizio Torrico is a Front-End React Developer specialized in javascript and python. It's studying in the second best university of argentina(UNLP) and this portfolio is to show his projects"
+    />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5TMPBJ4");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RMQJPKD4QC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RMQJPKD4QC");
+    </script>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
   </head>
   <body>
     <canvas id="bg"></canvas>
-    <script type="module" src="/main.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5TMPBJ4"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <main>
+      <header class="header">
+        <nav class="nav">
+          <img
+            src="img/logo_white.svg"
+            alt="Torrico logo"
+            class="nav__logo"
+            id="logo"
+            data-version-number="3.0"
+          />
+          <ul class="nav__links">
+            <li class="nav__item">
+              <a class="nav__link" href="#section--1">About </a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#section--2">Projects</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link nav__link--btn btn--show-modal" href="#"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__title">
+          <!-- <h1 onclick="alert('HTML alert')"> -->
+          <div class="header__text">
+            <h1>
+              <!-- Portfolio to
+                <span class="highlight">escape </span>
+                from
+                <span class="highlight">Latin-America</span> -->
+
+              Portfolio from <span class="highlight"> Fabrizio Torrico</span>
+            </h1>
+            <br />
+            <h4>
+              I'm an independent and passionate developer, specialized in
+              building high quality websites and applications
+              <!--  Are you looking for a communicative front-end developer who works well in a team and above all has a passion for everything to do with web development (including React)? Let me know! I also have design experience and I am a specialist in digital marketing.<br> -->
+              <button class="btn--text btn--scroll-to">
+                Read More &DownArrow;
+              </button>
+            </h4>
+          </div>
+          <div class="landscape-art">
+            <div class="sun"></div>
+            <div class="rocket"></div>
+          </div>
+          <!-- <img
+          src="img/perfil3.png"
+          class="header__img"
+          alt="Minimalist bank items"
+        /> -->
+        </div>
+        <img
+          class="spacer"
+          src="img/layered-waves-haikei.svg"
+          alt="ground spacer"
+        />
+      </header>
+
+      <section id="section--1">
+        <div class="section">
+          <div class="section__title">
+            <!--        <h2 class="section__description">Projects</h2> -->
+            <h2 class="section__header">About Me</h2>
+          </div>
+          <div class="me">
+            <img
+              src="img/fabrizioTorrico-min.png"
+              data-src="img/fabrizioTorrico.png"
+              alt="Creator"
+              class="me__img lazy-img"
+            />
+            <div class="me__text">
+              <!--           <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-airplay"></use>
+            </svg>
+          </div> -->
+              <h5 class="me__header">Hi I'm Fabrizio Torrico</h5>
+              <p>
+                I'm a junior developer absolute passionate about computer
+                science. Through constant practice and learning modern features,
+                I'm able to produce custom, aesthetic software with high value
+                and good ranking. Are you looking for a communicative front-end
+                developer who works well in a team and above all has a big
+                passion for computer science? Let me know! I also have digital
+                marketing experience and I am a specialist in
+                javascript(including React)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="section--2">
+        <div class="section__title">
+          <h3 class="section__header">Latest works</h3>
+        </div>
+
+        <div class="project">
+          <img
+            src="img/project-intellicards-min.png"
+            data-src="img/project-intellicards.png"
+            class="project__img lazy-img"
+            alt="Photo 1"
+          />
+          <div class="project__text">
+            <!--           <div class="features__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-airplay"></use>
+              </svg>
+            </div> -->
+            <h5 class="project__header">intellicards</h5>
+            <p>
+              The landing page of a web application to study efficiently and
+              easily. It has it's own DB, authentication, user public pages and
+              real-time data, thanks to Nextjs i was able to work with
+              server-side-rendering and great SEO
+            </p>
+            <a
+              href="https://intellicards.vercel.app/"
+              target="_blank"
+              class="btn--text"
+              >Check it out!</a
+            >
+          </div>
+        </div>
+        <div class="project">
+          <img
+            src="img/merncommerce-min.jpg"
+            data-src="img/merncommerce.png"
+            class="project__img lazy-img"
+            alt="Photo 1"
+          />
+          <div class="project__text--left">
+            <h5 class="project__header">Torri ecommerce</h5>
+            <p>
+              A mongoDB, express, react and nodejs app with payment method
+              working It has a product catalog with up to 4 filters (including
+              the url filter) and a shopping cart. I also use redux to pass
+              information throughout the app
+            </p>
+            <a
+              href="https://my-mern-ecommerce.netlify.app/"
+              target="_blank"
+              class="btn--text"
+              >Check it out!</a
+            >
+          </div>
+        </div>
+        <div class="project">
+          <img
+            src="img/project-cryptoapp-min.png"
+            data-src="img/project-cryptoapp.png"
+            class="project__img lazy-img"
+            alt="Photo 1"
+          />
+          <div class="project__text">
+            <h5 class="project__header">My crypto-app</h5>
+            <p>
+              A listing of the top 50 Crypto Currencies with almost real-time
+              data, i got a lot of fun learning to fetch data and it has light
+              and dark theme 🌞🌑
+            </p>
+            <a
+              href="https://my-cryptoapp.netlify.app/"
+              target="_blank"
+              class="btn--text"
+              >Check it out!</a
+            >
+          </div>
+        </div>
+        <div class="project">
+          <img
+            src="img/project-forkify-min.png"
+            data-src="img/project-forkify.png"
+            class="project__img lazy-img"
+            alt="Photo 1"
+          />
+          <div class="project__text--left">
+            <h5 class="project__header">Forkify</h5>
+            <p>
+              An app for searching over 1.000.000 recipes! and do it with
+              serving couts, I've had a lot of fun and gained a lot of knowledge
+              making this app entirely in vanilla js.
+            </p>
+            <a
+              href="https://forkify-torr1co.netlify.app/#5ed6604591c37cdc054bcd09"
+              target="_blank"
+              class="btn--text"
+              >Check it out!</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section" id="section--3">
+        <div class="section__title">
+          <h2 class="section__description">Why me?</h2>
+          <h3 class="section__header">
+            You have landed in the right place to create your next project
+          </h3>
+        </div>
+
+        <div class="operations">
+          <div class="operations__tab-container">
+            <button
+              class="btn operations__tab operations__tab--active"
+              data-tab="1"
+            >
+              Security
+            </button>
+            <button class="btn operations__tab" data-tab="2">
+              Attractive design
+            </button>
+            <button class="btn operations__tab" data-tab="3">Quality</button>
+          </div>
+          <div
+            class="operations__content operations__content--1 operations__content--active"
+          >
+            <div class="operations__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-lock"></use>
+              </svg>
+            </div>
+            <h5 class="operations__header">Fully secured projects</h5>
+            <p>
+              projects protected with ssl certificates and backup. I also make
+              sure to take advantage of design systems to scale sustainably and
+              easily maintenance.
+            </p>
+          </div>
+
+          <div class="operations__content operations__content--2">
+            <div class="operations__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-heart"></use>
+              </svg>
+            </div>
+            <h5 class="operations__header">
+              Every pixel made with maximun dedication
+            </h5>
+            <p>
+              Clean, Elegant & Responsive Designs, i have great capacity to
+              establish credibility in your field by making great looking
+              decisions and having good practices, but it’s also absolutely
+              vital when it comes to SEO and improving your sales.
+            </p>
+          </div>
+          <div class="operations__content operations__content--3">
+            <div class="operations__icon">
+              <svg>
+                <use xlink:href="img/icons.svg#icon-bar-chart"></use>
+              </svg>
+            </div>
+            <h5 class="operations__header">Analyisis and media integration</h5>
+            <p>
+              I make sure that you can collect data so that you can approach
+              your audience in the most effective way possible, forming easy
+              integrations with social networks and google analytics
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--sign-up">
+        <div class="section__title">
+          <h3 class="section__header">Interested to work with me?</h3>
+        </div>
+        <button class="btn btn--show-modal">Let's Talk!</button>
+      </section>
+
+      <footer class="footer">
+        <!-- <img src="img/logo_white.png" alt="Logo" class="footer__logo" /> -->
+        <p class="footer__copyright">
+          Created by
+          <a class="footer__link footer__item">Fabrizio Torrico</a>
+          <a
+            class="footer__link footer__item"
+            target="_blank"
+            href="https://www.instagram.com/fabriziotorrico/"
+            >Instagram</a
+          >
+          <a
+            class="footer__link footer__item"
+            target="_blank"
+            href="https://github.com/Torr1co"
+            >Github</a
+          >
+
+          <a
+            class="footer__link footer__item"
+            target="_blank"
+            href="https://www.linkedin.com/in/fabrizio-torrico-3b100b214/"
+            >Linkedin</a
+          >
+        </p>
+      </footer>
+
+      <div class="modal hidden">
+        <button class="btn--close-modal">&times;</button>
+        <h2 class="modal__header">Let's Talk! <br /></h2>
+        <p>
+          We will get back to you within one to two days through email. Also
+          please don't forget to check your spam account just in case!
+        </p>
+        <form method="POST" class="modal__form">
+          <label>First Name</label>
+          <input class="name" type="text" required />
+          <label>Email Address</label>
+          <input class="email" type="email" required />
+          <label>Subject</label>
+          <input class="subject" type="text" required />
+          <textarea
+            required
+            id="message"
+            class="message"
+            placeholder="Message"
+          ></textarea>
+          <input type="submit" class="btn" value="Send Request &rarr;" />
+        </form>
+      </div>
+      <div class="overlay hidden"></div>
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script type="module" src="/src/index.ts"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </body>
 </html>
