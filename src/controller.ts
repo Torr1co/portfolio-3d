@@ -1,6 +1,7 @@
 import "../styles/canvas.css";
 import "../styles/queries.css";
 import "../styles/global.css";
+
 function dqs<T = Element>(selector: string) {
   return document.querySelector(selector) as T;
 }

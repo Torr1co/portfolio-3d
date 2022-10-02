@@ -1,4 +1,4 @@
-import * as THREE from "THREE";
+import * as THREE from "three";
 
 const getRandomParticelPos = (particleCount: number) => {
   const arr = new Float32Array(particleCount * 3);
