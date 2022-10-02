@@ -195,6 +195,7 @@ const loadImg: IntersectionObserverCallback = function (entries, observer) {
   // Replace src with data-src
   const imgUrl = new URL(loadingImg.dataset.src as string, import.meta.url)
     .href;
+  console.log(imgUrl);
   loadingImg.src = imgUrl;
 
   loadingImg.addEventListener("load", function () {
