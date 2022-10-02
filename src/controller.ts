@@ -254,7 +254,7 @@ const sendEmail = function (
   });
 };
 
-const submitForm = function (e) {
+const submitForm = function (e: SubmitEvent) {
   e.preventDefault();
 
   let name = dqs<HTMLInputElement>(".name").value;
