@@ -6,11 +6,11 @@ const modal = dqs(".modal");
 const overlay = dqs(".overlay");
 const btnCloseModal = dqs(".btn--close-modal");
 const btnScrollTo = dqs(".btn--scroll-to");
-const section1 = dqs("#section--1");
+const section1 = document.getElementById("section--1") as HTMLElement;
 const nav = dqs(".nav");
 const tabsContainer = dqs(".operations__tab-container");
 
-const modalForm = dqs<HTMLFormElement>(".modal__form");
+const modalForm = document.getElementById("modal__form") as HTMLFormElement;
 
 const tabs = document.querySelectorAll(".operations__tab");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
@@ -240,17 +240,17 @@ declare namespace Email {
 const submitForm = function (e: SubmitEvent) {
   e.preventDefault();
 
-  let name = dqs<HTMLInputElement>(".name").value;
-  let email = dqs<HTMLInputElement>(".email").value;
-  let subject = dqs<HTMLInputElement>(".subject").value;
-  let message = dqs<HTMLInputElement>(".message").value;
+  const name = dqs<HTMLInputElement>(".name").value;
+  const email = dqs<HTMLInputElement>(".email").value;
+  const subject = dqs<HTMLInputElement>(".subject").value;
+  const message = dqs<HTMLInputElement>(".message").value;
 
   Email.send({
     Host: "smtp.elasticemail.com",
     Username: "torricofabrizio27@gmail.com",
     To: "torricofabrizio27@gmail.com",
     From: "torricofabrizio27@gmail.com",
-    Password: "58786E9B8910DE3F023EA4AE2D1E53425083",
+    Password: import.meta.env.VITE_EMAIL_PASSWORD,
     Subject: `${name} contesto tu portfolio, ${subject}`,
     Body: `Name: ${name} <br/> Email: ${email} <br/> Message:  ${message}`,
   }).then((message: string) => {
@@ -268,4 +268,11 @@ const submitForm = function (e: SubmitEvent) {
   });
 };
 
+/* const submitForm = function (e: SubmitEvent) {
+  e.preventDefault();
+
+  const data = Object.fromEntries(new FormData(modalForm).entries());
+
+  console.log(1, data);
+}; */
 modalForm.addEventListener("submit", submitForm);
